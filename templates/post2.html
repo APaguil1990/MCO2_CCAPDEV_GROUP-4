@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/post.css">
+    <link rel="stylesheet" href="css/comment.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <title>Freedom Wall</title>
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <a href="#"><img src="images/logo.png" id="logo" alt="logo"></a> <!--Resolve issue with a element.-->
+            <h2 id="name">Freedom Wall</h2>
+        </div>
+        <div class="center">
+            <a href="#" alt="home-icon"><img id="home-icon" src="images/home-icon.png"></a>
+            <div class="search-bar">
+                <a href="#"><img src="images/search-icon.png" alt="search-icon" id="search-icon"></a>
+                <input type="text" placeholder="Search...">
+            </div>
+        </div>
+        <div class="right">
+            <a href="#" id="profile"><img src="images/pfp.jpg" id="profile" alt="profile-pic"></a>
+            <a href="#"><img id="menu-icon" src="images/hamburger-menu-icon.png" alt="hamburger-menu-icon"></a>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="user">
+            <img class="profile" id="pfp-menu" src="images/pfp.jpg" alt="profile-pic">
+            <span class="text">Mr. Green</span>
+        </div>
+        <div class="settings">
+            <svg class="icons" id="gear-icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" width="24" height="24" color="#00703C"><defs><style>.cls-6374f8d9b67f094e4896c636-1{fill:white;stroke:currentColor;stroke-miterlimit:10;}</style></defs><path class="cls-6374f8d9b67f094e4896c636-1" d="M20.59,12a8.12,8.12,0,0,0-.15-1.57l2.09-1.2-2.87-5-2.08,1.2a8.65,8.65,0,0,0-2.72-1.56V1.5H9.14V3.91A8.65,8.65,0,0,0,6.42,5.47L4.34,4.27l-2.87,5,2.09,1.2a8.29,8.29,0,0,0,0,3.14l-2.09,1.2,2.87,5,2.08-1.2a8.65,8.65,0,0,0,2.72,1.56V22.5h5.72V20.09a8.65,8.65,0,0,0,2.72-1.56l2.08,1.2,2.87-5-2.09-1.2A8.12,8.12,0,0,0,20.59,12Z"></path><circle class="cls-6374f8d9b67f094e4896c636-1" cx="12" cy="12" r="3.82"></circle></svg>
+            <span class="text">Settings</span>
+        </div>
+        <div class="log-out">
+            <svg class="icons" id="logout-icon" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m17 16 4-4m0 0-4-4m4 4H7m6 4v1a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h4a3 3 0 0 1 3 3v1" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="stroke-374151"></path></svg>                <span class="text">Log Out</span>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="post">
+            <div class="top">
+                <div class="user-info">
+                    <a href="#"><img id="profile-pic" src="images/pfp2.png" alt="profile-pic"></a>
+                    <p id="username">not Walter White</p>
+                </div>
+                <a href="#" id="bookmark">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 -960 960 960" width="40">
+                        <path d="M200-120v-640q0-33 23.5-56.5T280-840h400q33 0 56.5 23.5T760-760v640L480-240 200-120Zm80-122 200-86 200 86v-518H280v518Zm0-518h400-400" fill="#00703E"/>
+                    </svg>                      
+                </a>
+            </div>
+            <h3 id="title">Everything you need to know about Chemistry.</h3>
+            <p id="description">
+                Just want to share some important concepts you need to know in Chemistry: <br>
+                <br>
+                1. H20 is water. 2 Hydrogen atoms + 1 Oxygen atom <br>
+                2. Fructose is fruit sugar, Glucose is main type of sugar in your blood, Sucrose is anemo. <br>
+                3. Mitochondria is the powerhouse of the cell. <br>
+                4. I hate physics. <br>
+                5. Air is made up of 78% Nitrogen, 20.9% Oxygen, 0.03% Carbon Dioxide and less than 1% of other gases. <br>
+            </p>
+            <div class="action-icons">
+                <div class="comment">
+                    <a href="#" id="comment-icon">
+                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" width="27" height="27" color="#00703C">
+                        <defs><style>.cls-637642e7c3a86d32eae6f1b1-1{fill:none;stroke:currentColor;stroke-miterlimit:10;}</style></defs>
+                        <path class="cls-637642e7c3a86d32eae6f1b1-1" d="M1.5,5.3v9.54a3.82,3.82,0,0,0,3.82,3.82H7.23v2.86L13,18.66h5.73a3.82,3.82,0,0,0,3.82-3.82V5.3a3.82,3.82,0,0,0-3.82-3.82H5.32A3.82,3.82,0,0,0,1.5,5.3Z">
+                        </path>
+                    </svg>
+                    </a>
+                    <p>Comment</p>
+                </div>
+                <div class="like">
+                    <a href="#" id="like">
+                        <svg id="like-icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" width="24" height="24" color="#00703C"><defs><style>.cls-637b715ef95e86b59c579e6f-1{fill: white;stroke:currentColor;stroke-miterlimit:10;}</style></defs><path class="cls-637b715ef95e86b59c579e6f-1" d="M.5,12H5.28l6.11-7.06A2,2,0,0,0,12,3.51a2,2,0,0,1,2-2,2.74,2.74,0,0,1,2,.8,2.79,2.79,0,0,1,.8,2c0,2-2.87,5.86-2.87,5.86h6A2.61,2.61,0,0,1,22.5,12.7a2.94,2.94,0,0,1-.05.51L20.89,21A1.91,1.91,0,0,1,19,22.52H11.25a9.13,9.13,0,0,1-4-.95h0a9.08,9.08,0,0,0-4.06-1H.5"></path></svg>
+                    </a>
+                    <span class="num" id="up-num">10</span>
+                </div>
+                <div class="dislike">
+                    <a href="#" id="dislike">
+                        <svg id="dislike-icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" width="24" height="24" color="#00703C"><defs><style>.cls-637b715ef95e86b59c579e6e-1{fill:white;stroke:currentColor;stroke-miterlimit:10;}</style></defs><path class="cls-637b715ef95e86b59c579e6e-1" d="M.5,12H5.28l6.11,7.06A2,2,0,0,1,12,20.49a2,2,0,0,0,2,2,2.74,2.74,0,0,0,2-.8,2.79,2.79,0,0,0,.8-1.95c0-2-2.87-5.86-2.87-5.86h6A2.61,2.61,0,0,0,22.5,11.3a2.94,2.94,0,0,0-.05-.51L20.89,3A1.91,1.91,0,0,0,19,1.48H11.25a9.13,9.13,0,0,0-4,1h0a9.08,9.08,0,0,1-4.06,1H.5"></path></svg>              
+                    </a>
+                    <span class="num" id="down-num">0</span>
+                </div>
+            </div>
+        </div>
+        <div class="comment-posts">
+            <div class="add-comment-panel">
+                <p id="comment">Add a comment</p>
+                <button id="add-comment-button">
+                    Comment
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                        <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" fill="#00703E"/>
+                    </svg>
+                </button>
+            </div>
+            <span id="line"></span>
+
+            <div class="comment-post" id="c1">
+                <div class="user-info">
+                    <a href="#"><img id="profile-pic" src="images/pfp2.png" alt="profile-pic"></a>
+                    <p id="username">not Jesse Pinkman</p>
+                </div>
+                <p id="comment">I can now pass my Chemistry exam tomorrow.</p>
+            </div>
+            <div class="comment-post" id="c2">
+                <div class="user-info">
+                    <a href="#"><img id="profile-pic" src="images/pfp2.png" alt="profile-pic"></a>
+                    <p id="username">Lukewarm Walker</p>
+                </div>
+                <p id="comment">There is also another type of sugar called Galactose, it fought the Avengers.</p>
+            </div>
+            <div class="comment-post" id="c3">
+                <div class="user-info">
+                    <a href="#"><img id="profile-pic" src="images/pfp2.png" alt="profile-pic"></a>
+                    <p id="username">Hyou Ka</p>
+                </div>
+                <p id="comment">How can I use this knowledge to make ice cream?</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

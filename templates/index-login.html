@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="css/index_style.css" type="text/css">
+    <title>Freedom Wall - Log In</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+  </head>
+
+  <body>
+    <div class="page">
+        <div class="header">
+            <img src="images/logo.png">
+            <h1>Freedom Wall</h1>
+        </div>
+
+        <div class="mid-block">
+            <h1> Some Tagline</h1>
+            <p>New to Freedom Wall? <br>
+                <a href="signup.html" id="sign-up">Sign Up</a>
+            </p>
+
+            <div class="login">
+                <div id="bar"></div>
+                <h2 id="h-login">Log In</h2>
+                <form class="inputs" id="login_form">
+                    <span class="label">Email</span><br>
+                    <input type="email" class="box" id="email" value="" required><br><br>
+                    <span class="label">Password</span><br>
+                    <input type="password" class="box" id="password" value="" required>
+                    
+                    
+                    <label for="pass-vis" id="pass-eye"></label>
+                    <input type="checkbox" id="pass-vis">   
+                    <button type="submit" id="login-btn">Log In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>

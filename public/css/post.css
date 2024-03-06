@@ -84,11 +84,6 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    transition: transform 0.3s ease;
-}
-
-#like:hover, #dislike:hover, #comment:hover {
-    transform: scale(1.1);  
 }
 
 .i-right {
