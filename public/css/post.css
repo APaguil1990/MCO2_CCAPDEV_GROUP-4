@@ -1,0 +1,107 @@
+* {
+    font-family: 'Avenir Next', sans-serif;
+}
+
+.post {
+    font-family: Arial, Helvetica, sans-serif;;
+    background-color: white;
+    padding: 20px 30px;
+    border-width: 4px;
+    border-radius: 36px;
+    border-style: solid;
+    border-color: #00703C;
+    margin: 20px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.post .top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post .top .user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.post .top #profile-pic {
+    width: 50px;
+    height: 50px;
+    background-color: #A6A6A6;
+    border-radius: 50%;
+}
+
+.post .top .user-info #username {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00703C;
+}
+
+.post #title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00703C;
+    margin: 20px 0 25px 0;
+}
+
+.post #description {
+    font-size: 14px;
+    font-weight: lighter;
+    line-height: 1.4;
+    color: #00703C;
+    margin-top: 0;
+    margin: 0 0 30px 0;
+}
+
+.post .action-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.post .action-icons .comment {
+    color: #00703C;
+    display: flex;
+    align-items: center;
+    gap: 2.5px;
+}
+
+.comment:hover path {
+    fill: #00703C;
+}
+
+.num {
+    color: #00703C;
+    position: relative;
+    font-size: 15px;
+}
+
+.like, .dislike {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.3s ease;
+}
+
+#like:hover, #dislike:hover, #comment:hover {
+    transform: scale(1.1);  
+}
+
+.i-right {
+    position: relative;
+    display: flex;
+    gap: 30px;
+    left: 960px;
+}
+
+.post .action-icons .edit {
+    color: #00703C;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

@@ -1,0 +1,70 @@
+.delete-post-dialogue {
+    font-family: Arial, Helvetica, sans-serif;
+    width: fit-content;
+    background-color: white;
+    padding: 15px 30px;
+    border-width: 4px;
+    border-color: #00703E;
+    border-style: solid;
+    border-radius: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-post-dialogue #main-instruction {
+    font-size: 32px;
+    color: #00703E;
+    margin: 0;
+}
+
+.delete-post-dialogue #description {
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.4;
+    color: #00703E;
+    margin: 10px 0;
+}
+
+.delete-post-dialogue .buttons {
+    display: flex;
+    gap: 40px;
+}
+
+.delete-post-dialogue #cancel-button, .delete-post-dialogue #delete-button {
+    width: 150px;
+    height: 35px;
+    font-size: 22px;
+    border-radius: 36px;
+}
+
+.delete-post-dialogue #cancel-button {
+    background-color: #00703E;
+    color: white;
+    border: none;
+    border-radius: 36px;
+    outline: none;
+}
+
+.delete-post-dialogue #cancel-button:hover {
+    background-color: white;
+    color: #00703E;
+    border-width: 2.5px;
+    border-style: solid;
+}
+
+.delete-post-dialogue #delete-button {
+    background-color: white;
+    color: #00703E;
+    border-width: 2.5px;
+    border-style: solid;
+    border-color: #00703E;
+    border-radius: 36px;
+    outline: none;
+}
+
+.delete-post-dialogue #delete-button:hover {
+    background-color: red;
+    color: white;
+}
