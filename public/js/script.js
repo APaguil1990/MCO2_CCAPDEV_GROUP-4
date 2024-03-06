@@ -52,25 +52,34 @@ $("#home-icon").click(function() {
   window.location.href = "forum.html";
 });
 
-$(document).ready(function() {
+function thumbClick(icon, num, type) {
+  var color = icon.css('fill');
 
-  function thumbClick(icon, num) {
-    var color = icon.css('fill');
-  
-    if (color === 'rgb(255, 255, 255)') {
-      icon.css('fill', '#00703C');
-      num.text(parseInt(num.text())-1);
+  if (color === 'rgb(255, 255, 255)') {
+    icon.css('fill', '#00703C');
+    switch (type) {
+      case 0:
+        num.text(parseInt(num.text())-1);
+        break;
+      case 1:
+        num.text(parseInt(num.text())+1);
     }
-    else {
-      icon.css('fill', 'white');
-      num.text(parseInt(num.text())+1);
-    }
-  
-    return;
-  }
     
+  }
+  else {
+    icon.css('fill', 'white');
+    switch (type) {
+      case 0:
+        num.text(parseInt(num.text())+1);
+        break;
+      case 1:
+        num.text(parseInt(num.text())-1);
+    }
+  }
+  return;
+}
 
-  $(".thumb-up").click(function() {
+$(".forum-container").on('click', '.thumb-up', function() {
     var div = $(this).closest('.forum');
     var downVoteIcon = div.find('.thumb-down').find('path');
     var upVoteIcon = $(this).find('path');
@@ -78,67 +87,48 @@ $(document).ready(function() {
     var downNum = div.find('.down-num');
 
     if(downVoteIcon.css('fill') === 'rgb(255, 255, 255)') {
-      thumbClick(downVoteIcon, downNum)
+      thumbClick(downVoteIcon, downNum, 0)
     }
-    thumbClick(upVoteIcon, upNum);
-    });
-
-    $(".thumb-down").click(function() {
-      var div = $(this).closest('.forum');
-      var downVoteIcon = $(this).find('path'); 
-      var upVoteIcon = div.find('.thumb-up').find('path');;
-      var upNum = div.find('.up-num');
-      var downNum = div.find('.down-num');
+    thumbClick(upVoteIcon, upNum, 0);
   
-      if(upVoteIcon.css('fill') === 'rgb(255, 255, 255)') {
-        thumbClick(upVoteIcon, upNum)
-      }
-      thumbClick(downVoteIcon, downNum);
-      });
 });
 
+$(".forum-container").on('click', ".thumb-down",function() {
+  var div = $(this).closest('.forum');
+  var downVoteIcon = $(this).find('path'); 
+  var upVoteIcon = div.find('.thumb-up path');
+  var upNum = div.find('.up-num');
+  var downNum = div.find('.down-num');
 
-$(document).ready(function() {
-
-  function thumbClick(icon, num) {
-    var color = icon.css('fill');
-  
-    if (color === 'rgb(255, 255, 255)') {
-      icon.css('fill', '#00703C');
-      num.text(parseInt(num.text())+1);
-    }
-    else {
-      icon.css('fill', 'white');
-      num.text(parseInt(num.text())-1);
-    }
-  
-    return;
+  if (upVoteIcon.css('fill') === 'rgb(255, 255, 255)') {
+    thumbClick(upVoteIcon, upNum, 0)
   }
-    
-  $(".like").click(function() {
-    var icon = $("#like-icon").find('path');
-    var upNum = $("#up-num");
-    var downNum = $("#down-num");
-    var dislikeIcon = $("#dislike-icon").find('path');
-
-    if(dislikeIcon.css('fill') === 'rgb(0, 112, 60)') {
-      thumbClick(dislikeIcon, downNum)
-    }
-    thumbClick(icon, upNum);
-  });
-
-  $(".dislike").click(function() {
-    var icon = $("#dislike-icon").find('path');
-    var upNum = $("#up-num");
-    var downNum = $("#down-num");
-    var likeIcon = $("#like-icon").find('path');
+  thumbClick(downVoteIcon, downNum, 0);
+});
 
     
-    if(likeIcon.css('fill') === 'rgb(0, 112, 60)') {
-      thumbClick(likeIcon, upNum);
-    }
-    thumbClick(icon, downNum);
-  });
+$(".like").click(function() {
+  var icon = $("#like-icon").find('path');
+  var upNum = $("#up-num");
+  var downNum = $("#down-num");
+  var dislikeIcon = $("#dislike-icon").find('path');
+
+  if(dislikeIcon.css('fill') === 'rgb(0, 112, 60)') {
+    thumbClick(dislikeIcon, downNum, 1)
+  }
+  thumbClick(icon, upNum, 1);
+});
+
+$(".dislike").click(function() {
+  var icon = $("#dislike-icon").find('path');
+  var upNum = $("#up-num");
+  var downNum = $("#down-num");
+  var likeIcon = $("#like-icon").find('path');
+  
+  if(likeIcon.css('fill') === 'rgb(0, 112, 60)') {
+    thumbClick(likeIcon, upNum, 1);
+  }
+  thumbClick(icon, downNum, 1);
 });
 
 $("#menu-icon").click(function() {
@@ -289,3 +279,13 @@ $("#c-pass").click(function() {
   
   change(pass, this, img);
 }); 
+
+
+$('.tags').on('click', '.tag-cont', function(){
+
+  var tag = $(this).closest('.tag-cont');
+   
+  $('.tags .tag-cont').css('background-color', 'white');
+
+  tag.css('background-color', '#00703C');
+});
