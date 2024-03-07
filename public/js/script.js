@@ -16,14 +16,15 @@ $("#pass-vis").click(function() {
   change(pass, this, img);
 })
 
-$("#login_form").submit(function(event) {
+// $("#login_form").on('submit', function(event) {
 
-  event.preventDefault();
+//   event.preventDefault();
 
-  //some logic here for information checking 
+//   //some logic here for information checking 
 
-  window.location.href = "forum.html";
-});
+//   // window.location.href = "forum.html";
+//   $(this).submit;
+// });
 
 $("#b-pass").click(function() {
   var pass = $("#password");
