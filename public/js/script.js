@@ -158,17 +158,17 @@ $("#post_btn").click(function() {
    alert("Successfully posted.")
 });
 
-$("#f1 .title").click(function() {
-  window.location.href = "post1.html";
-})
+// $("#f1 .title").click(function() {
+//   window.location.href = "post1.html";
+// })
 
-$("#f2 .title").click(function() {
-  window.location.href = "post2.html";
-});
+// $("#f2 .title").click(function() {
+//   window.location.href = "post2.html";
+// });
 
-$("#f3 .title").click(function() {
-  window.location.href = "post3.html";
-});
+// $("#f3 .title").click(function() {
+//   window.location.href = "post3.html";
+// });
 
 $(".user").click(function() {
   window.location.href = "profile.html";

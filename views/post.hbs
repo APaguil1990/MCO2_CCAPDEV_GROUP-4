@@ -1,14 +1,11 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/post.css">
     <link rel="stylesheet" href="css/comment.css">
     <script src="js/jquery-3.6.0.min.js"></script>
     <title>Freedom Wall</title>
-</head>`
+</head>
 <body>
     <div class="header">
         <div class="left">
@@ -23,14 +20,14 @@
             </div>
         </div>
         <div class="right">
-            <a href="#" id="profile"><img src='{{#####}}' id="profile" alt="profile-pic"></a>
+            <a href="#" id="profile"><img src='images/pfp.jpg' id="profile" alt="profile-pic"></a>
             <a href="#"><img id="menu-icon" src="images/hamburger-menu-icon.png" alt="hamburger-menu-icon"></a>
         </div>
     </div>
     <div class="menu">
         <div class="user">
-            <img class="profile" id="pfp-menu" src='{{#####}}' alt="profile-pic">
-            <span class="text">{{#####}}</span>
+            <img class="profile" id="pfp-menu" src='images/pfp.jpg' alt="profile-pic">
+            <span class="text">{{user.name}}</span>
         </div>
         <div class="settings">
             <svg class="icons" id="gear-icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" width="24" height="24" color="#00703C"><defs><style>.cls-6374f8d9b67f094e4896c636-1{fill:white;stroke:currentColor;stroke-miterlimit:10;}</style></defs><path class="cls-6374f8d9b67f094e4896c636-1" d="M20.59,12a8.12,8.12,0,0,0-.15-1.57l2.09-1.2-2.87-5-2.08,1.2a8.65,8.65,0,0,0-2.72-1.56V1.5H9.14V3.91A8.65,8.65,0,0,0,6.42,5.47L4.34,4.27l-2.87,5,2.09,1.2a8.29,8.29,0,0,0,0,3.14l-2.09,1.2,2.87,5,2.08-1.2a8.65,8.65,0,0,0,2.72,1.56V22.5h5.72V20.09a8.65,8.65,0,0,0,2.72-1.56l2.08,1.2,2.87-5-2.09-1.2A8.12,8.12,0,0,0,20.59,12Z"></path><circle class="cls-6374f8d9b67f094e4896c636-1" cx="12" cy="12" r="3.82"></circle></svg>
@@ -42,7 +39,7 @@
     </div>
 
     <div class="content">
-        <div class="post" id="{{post.id}}">
+        <div class="post" id="{{post._id}}">
             <div class="top">
                 <div class="user-info">
                     <a href="#" ><img id="profile-pic" src="images/pfp.jpg" alt="profile-pic"></a>
@@ -114,12 +111,12 @@
             <span id="line"></span>
 
             {{#each comment}}
-            <div class="comment-post" id="{{comment.id}}">
+            <div class="comment-post" id="{{this.id}}">
                 <div class="user-info">
-                    <a href="#"><img id="profile-pic" src='{{#####}}' alt="profile-pic"></a>
-                    <p id="username">{{comment.name}}</p>
+                    <a href="#"><img id="profile-pic" src='images/pfp.jpg' alt="profile-pic"></a>
+                    <p id="username">{{this.name}}</p>
                 </div>
-                <p id="comment">{{######}}</p>
+                <p id="comment">{{this.content}}</p>
                 <div class="action-icons">
                     <div class="edit">
                         <a href="#" id="edit-icon">

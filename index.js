@@ -38,21 +38,21 @@ app.get('/signup', (req, res) => {
     res.sendFile(__dirname + '\\' + 'signup.html');
 });
 
-app.get('/post/:id', async function(res, req) {
-
-    const post = await Post.find({_id: req.params.id});
-    console.log(post);
-
+app.get('/forums', async function(req,res) {
+    const post = await Post.find({});
+    const user = await User.findOne({});
+    res.render('forum', { post, user });
 });
 
-app.get('/forums',  async function(req,res) {
-    const post = await Post.find({});
-    const user = await User.findOne({})
-    res.render('forum', { post, user })
+app.get('/post/:id', async function(req, res) {
+    const id = req.params.id;
+    const post = await Post.findById(id);
+    const comment = await Comment.find({postId: id});
+    const user = await User.findOne({});
+    res.render('post', { post, comment, user });
 });
 
 const server = app.listen(3000, function() {
     console.log("Running at Node 3000");
 });
 
-app.get

@@ -47,7 +47,7 @@
             </div>
             <div class="forum-container">
                 {{#each post}}
-                <div class="forum" action="/post/{{toString post.id}}" method="post">
+                <div class="forum">
                     <div class="top">
                         <div class="top-left">
                             <img src="images/pfp.jpg" class="forum-pfp">
@@ -57,7 +57,9 @@
                             <span>{{this.tag}}</span>
                         </div>
                     </div>
-                    <h1 class="title">{{this.title}}</h1>  
+                        <a href="/post/{{this._id}}">
+                            <h1 class="title">{{this.title}}</h1>
+                        </a>
                     <div class="action">
                         <div class="comment-cont">
                             <svg class="icon comment" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" width="24" height="24" color="#FFFFFF"><defs><style>.cls-637642e7c3a86d32eae6f1b1-1{fill:none;stroke:currentColor;stroke-miterlimit:10;}</style></defs><path class="cls-637642e7c3a86d32eae6f1b1-1" d="M1.5,5.3v9.54a3.82,3.82,0,0,0,3.82,3.82H7.23v2.86L13,18.66h5.73a3.82,3.82,0,0,0,3.82-3.82V5.3a3.82,3.82,0,0,0-3.82-3.82H5.32A3.82,3.82,0,0,0,1.5,5.3Z"></path></svg>

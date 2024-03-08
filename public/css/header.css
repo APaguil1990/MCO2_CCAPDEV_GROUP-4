@@ -11,7 +11,7 @@ body {
     background-color: #00703C;
     display: flex;
     justify-content: space-between;
-    position: sticky;
+    position: relative;
 }
 
 .header #home-icon, .header #menu-icon {
