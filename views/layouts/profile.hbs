@@ -14,7 +14,7 @@
          <div class="pfp-top">
             <div class="pfp-left">
                 <div class="profile-pic">
-                    <a href="#"><img src="images/pfp.jpg"  id="profile" alt="profile-pic"></a>
+                    <a href="#"><img src="/images/pfp.jpg"  id="profile" alt="profile-pic"></a>
                 </div>
                 <div class="username">
                     <h1>{{user.username}}</h1>
@@ -22,8 +22,8 @@
             </div>
             <div class="pfp-right">
                 <div class="info">
-                    <span class="dates">Birthday: {{user.birthday}}</span> 
-                    <span class="dates">Joined: {{user.dateCreated}}</span>
+                    <span class="dates">Birthday: {{formatDate user.birthday}}</span> 
+                    <span class="dates">Joined: {{formatDate user.dateCreated}}</span>
                 </div>
                 <div class="set-pfp">
                     <a href="edit_profile.html">
@@ -40,7 +40,7 @@
         </div>
         <div class="pfp-bot">
             <div class="bio">
-                <h3>{{user.bio}}
+                <h3>{{{user.bio}}}
                 </h3>
             </div>
         </div> 
@@ -53,14 +53,14 @@
             <div class="post">
                 <div class="top">
                     <div class="user-info">
-                        <a href="{{this.user.username}}"><img src="/images/pfp.jpg" id="postpfp"></a>
-                        <p id="username">{{this.user.username}}</p>
+                        <a href="#"><img src="/images/pfp.jpg" id="postpfp"></a>
+                        <p id="username">{{user.username}}</p>
                     </div>
                     <div class="tag">
                         <span>{{this.tag}}</span>
                     </div>                
                 </div>
-                <h3 id="title">{{this.title}}</h3>
+                <a href="/post/{{this.id}}"><h3 id="title">{{this.title}}</h3></a>
             </div>
         {{/each}}
     </div>

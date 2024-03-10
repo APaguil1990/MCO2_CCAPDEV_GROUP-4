@@ -26,6 +26,9 @@ hbs.registerHelper('toString', function(objectId) {
     return objectId.toString();
 });
 
+hbs.registerHelper('formatDate', function(date) {
+    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+});
 // app.use((req, res) => {
 //     res.status(404);
 //     res.send('<h1>Error 404: Resource not found</h1>');
@@ -41,7 +44,7 @@ app.get('/signup', (req, res) => {
 
 app.get('/forum', async function(req,res) {
     const post = await Post.find({});
-    const user = await User.findOne({});
+    const user = await User.findById(1001);
     res.render('forum', { post, user });
 });
 
@@ -49,14 +52,13 @@ app.get('/post/:id', async function(req, res) {
     const id = req.params.id;
     const post = await Post.findById(id);
     const comment = await Comment.find({postId: id});
-
     res.render('post', { post, comment });
 });
 
 app.get('/user/:id',async function(req, res) {
     const id = req.params.id;
-    const user = await User.find({name: id});
-    const post = await Post.find({username: id});
+    const user = await User.findById(id);
+    const post = await Post.find({'user.userId': id});
 
     res.render('profile', { user, post });
 });

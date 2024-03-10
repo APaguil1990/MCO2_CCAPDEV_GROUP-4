@@ -21,7 +21,7 @@
             </div>
             <h3 id="title">{{post.title}} </h3>
             <p id="description">
-                {{post.content}}
+                {{{post.content}}}
             </p>
             <div class="action-icons">
                 <div class="comment-icon">
@@ -81,8 +81,8 @@
             {{#each comment}}
             <div class="comment-post" id="{{this.id}}">
                 <div class="user-info">
-                    <a href="#"><img id="profile-pic" src='/images/pfp.jpg' alt="profile-pic"></a>
-                        <p id="username">{{this.user.username}}</p>
+                    <a href="/user/{{this.user.userId}}"><img id="profile-pic" src='/images/pfp.jpg' alt="profile-pic"></a>
+                    <p id="username">{{this.user.username}}</p>
                 </div>
                 <p id="comment">{{this.content}}</p>
                 <div class="action-icons">
