@@ -49,10 +49,6 @@ $("#signup_form").submit(function(event) {
   window.location.href = "index-login.html";
 });
 
-$("#home-icon").click(function() {
-  window.location.href = "forum.html";
-});
-
 function thumbClick(icon, num, type) {
   var color = icon.css('fill');
 
@@ -143,18 +139,8 @@ $("#menu-icon").click(function() {
   }
 });
 
-$(".log-out").click(function() {
-  window.location.href = "index-login.html";
-});
-
-$(".create-bar").click(function() {
-  window.location.href = "create_post.html";
-}); 
-
-$("#post_btn").click(function() {
+$("#post_btn").on('submit', function() {
   
-   window.location.href = "forum.html";
-
    alert("Successfully posted.")
 });
 
@@ -169,18 +155,6 @@ $("#post_btn").click(function() {
 // $("#f3 .title").click(function() {
 //   window.location.href = "post3.html";
 // });
-
-$(".user").click(function() {
-  window.location.href = "profile.html";
-});
-
-$(".settings").click(function() {
-  window.location.href = "settings.html";
-});
-
-$(".user").click(function() {
-  window.location.href = "profile.html";
-});
 
 $(document).ready(function() {
 
@@ -228,14 +202,6 @@ $(document).ready(function() {
   });
 });
 
-$("#profile").click(function() {
-  window.location.href = "profile.html";
-});
-
-$(".user").click(function() {
-  window.location.href = "profile.html";
-});
-
 $("#cancel-button").click(function() {
   window.location.href = "profile.html";
 });
@@ -251,14 +217,6 @@ $("#cancel-btn").click(function() {
 $("#change-btn").click(function() {
   window.location.href = "forum.html";
 });
-
-$("#title").click(function() {
-  window.location.href = "post1.html";
-})
-
-$("#logo").click(function() {
-  window.location.href = "forum.html";
-})
 
 $("#o-pass").click(function() {
   var pass = $("#old-password");

@@ -1,20 +1,27 @@
 const mongoose = require('mongoose');
 
 const PostSchema = mongoose.Schema({
-    user: String,
+    user: {
+        username: String,
+    },
     title: String,
     content: String,
     tag: String,
-    datePosted: Date,
+    datePosted: {
+        type: Date,
+        default: () => new Date.now()
+    },
     upVote: Number,
-    downVote: Number
+    downVote: Number,
 });
 
 const Post = mongoose.model('Post', PostSchema);
 
 
 const post = new Post({
-    user: 'Mr. Green',
+    user: {
+        username: 'Mr. Green'
+    },
     title: 'Interesting Facts about me.',
     content: `Hello, I am Mr. Green currently studying Computer Science. If its not obvious, I love the color Green. I am tall (please believe me),
             I also like playing games like Super Luigi Bros. and Super Luigi Odyssey. 

@@ -33,10 +33,15 @@
     align-items: center;
 }
 
-.comment-posts span#line {
+.comment-posts {
     border-bottom: 4px solid #00703E;
     margin: 0 25px;
 }
+
+span#line {
+    border-bottom: 4px solid #00703E;
+    margin: 0px 25px 10px;
+} 
 
 .comment-post {
     position: relative;

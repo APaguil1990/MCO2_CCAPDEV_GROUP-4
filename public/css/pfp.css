@@ -6,10 +6,26 @@
     background-color: #00703C;
     margin: 50px auto;
     display: flex;
+    flex-direction: column;
     width: 80%;
+    margin-top: 100px;
+}
+
+.pfp-top {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.pfp-left {
+    position: relative;
+    display: flex;
+    flex-direction: row;
 }
 
 .profile-pic {
+    position: relative;
     margin-right: 20px;
     width: 100px; 
     height: 100px;
@@ -19,38 +35,62 @@
 }
 
 .profile-pic img {
+    position: relative;
     width: 100%; 
     height: 100%;
     object-fit: cover; 
 }
 
-.profile-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-}
-
 .username {
+    position: relative;
     margin-bottom: 10px; 
     margin-top: -25px;
     color: white;
+    top: 10px;
 }
 
-.bio {
-    height: 100px;
-    width: 550px;
-    margin-top: 50px;
-    color: white;
-    font-size: 18px;
+.pfp-right {
+    display: flex;
+    position: relative;
+    left: 20%;
+}
+
+.profile .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
 }
 
 .info {
     position: relative;
     display: flex;
     flex-direction: row;
-    gap: 60px;
-    right: 10%;
+    gap: 50px;
+    top: 20px;
 }
+
+.set-pfp {
+    position: relative;
+    left: 90px;
+    top: 17px;
+}
+
+.set-pfp:hover {
+    cursor: pointer;
+}
+
+.pfp-bot {
+    display: flex;
+    position: relative;
+    align-items: center;
+    left: 200px;
+}
+
+.bio {
+    color: white;
+    font-size: 18px;
+}
+
 
 .dates {
     position: relative;
@@ -60,14 +100,6 @@
     font-size: 14px;
 }
 
-.set-pfp {
-    position: relative;
-    height: 30px;
-}
-
-.set-pfp:hover {
-    cursor: pointer;
-}
 
 .user-posts-container {
     font-family: Arial, Helvetica, sans-serif;;

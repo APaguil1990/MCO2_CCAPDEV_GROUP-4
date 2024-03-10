@@ -1,16 +1,20 @@
 const mongoose = require('mongoose');
 
 const CommentSchema = mongoose.Schema({
-    postId: String,
-    user: String,
-    content: String
+    postId: { type: mongoose.Schema.Types.ObjectId, ref: 'Post' },
+    user: {
+        username: String,
+     },
+    content: String,
 });
 
 const Comment = mongoose.model('Comment', CommentSchema)
 
 var comment = new Comment({
-    postId:"65e9385170160699561c9fd2",
-    user: "65e937a8252120bba896e49c",
+    postId: '65ec3c546895c8ac7d240b2a',
+    user: {
+        username: 'Mr. Green'
+    },
     content: "Sorry guys, I just love the color green..."
 });
 

@@ -13,11 +13,37 @@
     margin: 20px 25px;
     display: flex;
     flex-direction: column;
+    margin-top: 100px;
 }
 
 .post .top {
     display: flex;
     justify-content: space-between;
+}
+
+.tag {
+    position: relative;
+    display: flex;
+    width: 170px;
+    height: 35px;
+    background-color: #00BF63;
+    align-items: center;
+    justify-content: center;
+    right: 60px;
+    font-weight: 700;
+    color: #00703C;
+}
+
+.tag::before {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 18px solid transparent;
+    border-left: 20.5px solid #00BF63;
+    border-bottom: 17px solid transparent;
 }
 
 .post .top .user-info {
@@ -61,14 +87,14 @@
     gap: 20px;
 }
 
-.post .action-icons .comment {
+.post .action-icons .comment-icon {
     color: #00703C;
     display: flex;
     align-items: center;
     gap: 2.5px;
 }
 
-.comment:hover path {
+.comment-icon:hover path {
     fill: #00703C;
 }
 
@@ -87,7 +113,7 @@
     transition: transform 0.3s ease;
 }
 
-#like:hover, #dislike:hover, #comment:hover {
+#like:hover, #dislike:hover, #comment-icon:hover {
     transform: scale(1.1);  
 }
 
