@@ -34,25 +34,42 @@ hbs.registerHelper('formatDate', function(date) {
 //     res.send('<h1>Error 404: Resource not found</h1>');
 // })
 
+var currentUser;
+
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '\\' + 'index-login.html');
 })
 
-app.get('/signup', (req, res) => {
-    res.sendFile(__dirname + '\\' + 'signup.html');
+app.post('/signup', (req, res) => {
+    res.redirect('/');
 });
 
 app.get('/forum', async function(req,res) {
-    const post = await Post.find({});
-    const user = await User.findById(1001);
-    res.render('forum', { post, user });
+    const post = await Post.find({}).sort({ datePosted: -1});
+    res.render('forum', { post, currentUser });
 });
+
+app.post('/forum', async function(req, res) {
+
+    const email = req.body.email;
+    const password = req.body.password;
+
+    const user = await User.find({email: email, password: password })
+        if (user.length > 0) {
+            currentUser = user[0];
+            res.redirect('/forum');
+            console.log("User confirmed");
+        }
+        else {
+            res.status(401).send("<h1>Invalid Email or Password.</h1>");
+        }
+}); 
 
 app.get('/post/:id', async function(req, res) {
     const id = req.params.id;
     const post = await Post.findById(id);
     const comment = await Comment.find({postId: id});
-    res.render('post', { post, comment });
+    res.render('post', { post, comment, currentUser });
 });
 
 app.get('/user/:id',async function(req, res) {
@@ -60,19 +77,18 @@ app.get('/user/:id',async function(req, res) {
     const user = await User.findById(id);
     const post = await Post.find({'user.userId': id});
 
-    res.render('profile', { user, post });
+    res.render('profile', { user, post, currentUser });
 });
 
 app.get('/create-post', async function(req, res) {
 
-    const user = await User.findOne({});
-    res.render('create_post', { user });
+    res.render('create_post', { currentUser });
 });
 
 app.get('/settings', async function(req, res) {
 
     const user = await User.findOne({});
-    res.render('settings', { user });
+    res.render('settings', { user, currentUser });
 });
 
 const server = app.listen(3000, function() {

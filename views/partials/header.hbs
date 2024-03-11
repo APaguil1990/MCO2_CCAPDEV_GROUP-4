@@ -11,15 +11,15 @@
         </div>
     </div>
     <div class="right">
-        <a href="/user/{{user.id}}" id="profile"><img src='/images/pfp.jpg' id="profile" alt="profile-pic"></a>
+        <a href="/user/{{currentUser.id}}" id="profile"><img src='/images/pfp.jpg' id="profile" alt="profile-pic"></a>
         <a href="#"><img id="menu-icon" src="/images/hamburger-menu-icon.png" alt="hamburger-menu-icon"></a>
     </div>
 </div>
 <div class="menu">
-    <a href="/user/{{user.id}}">
+    <a href="/user/{{currentUser.id}}">
         <div class="user">
             <img class="profile" id="pfp-menu" src='/images/pfp.jpg' alt="profile-pic">
-            <span class="text">{{user.username}}</span>
+            <span class="text">{{currentUser.username}}</span>
         </div>
     </a>
     <a href="/settings">

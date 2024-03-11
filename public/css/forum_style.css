@@ -147,6 +147,16 @@ a:active {
     left: 7%;
 }
 
+#date {
+    position: relative;
+    justify-self: center;
+    align-self: center;
+    left: 50px;
+    font-size: small;
+    color: white;
+    font-weight: none;
+}
+
 .action {
     position: relative;
     display: flex;

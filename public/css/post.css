@@ -98,6 +98,15 @@
     fill: #00703C;
 }
 
+#date {
+    position: relative;
+    justify-self: center;
+    align-self: center;
+    font-size: small;
+    color: #00703C;
+    font-weight: none;
+}
+
 .num {
     color: #00703C;
     position: relative;

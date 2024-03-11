@@ -16,16 +16,6 @@ $("#pass-vis").click(function() {
   change(pass, this, img);
 })
 
-// $("#login_form").on('submit', function(event) {
-
-//   event.preventDefault();
-
-//   //some logic here for information checking 
-
-//   // window.location.href = "forum.html";
-//   $(this).submit;
-// });
-
 $("#b-pass").click(function() {
   var pass = $("#password");
   var img = $("#cust-bpass");
