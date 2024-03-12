@@ -11,6 +11,11 @@ const UserSchema = mongoose.Schema({
         type: Date,
         default: () => Date.now(),
     },
+    // Add profilePic field with default value
+    profilePic: {
+      type: String,
+      default: '/public/images/pfp.jpg' // Set default profile picture path
+  }
 })
 
 const User = mongoose.model('User', UserSchema)

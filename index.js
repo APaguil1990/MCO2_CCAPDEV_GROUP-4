@@ -77,6 +77,8 @@ app.get('/user/:id',async function(req, res) {
     const user = await User.findById(id);
     const post = await Post.find({'user.userId': id});
 
+    // Check if the user has a custom profile picture, otherwise use the default one
+    const profilePic = user.profilePic ? user.profilePic : '/pfp.jpg';
     res.render('profile', { user, post, currentUser });
 });
 
@@ -89,6 +91,28 @@ app.get('/settings', async function(req, res) {
 
     const user = await User.findOne({});
     res.render('settings', { user, currentUser });
+});
+
+// Edit profile route - Directs to the edit_profile.hbs page
+app.get('/edit_profile', async function(req, res) {
+    // Fetch the current user data from the database (if needed)
+    const user = await User.findById(currentUser._id); // Assuming currentUser contains the user's ID
+
+    // Render the edit_profile.hbs template and pass the current user's data
+    res.render('edit_profile', { currentUser: user }); // Pass the user object to the template
+});
+
+// Update profile route - Handle form submission for updating user profile
+app.post('/update_profile', async function(req, res) {
+    const userId = currentUser._id; // Assuming currentUser contains the user's ID
+    const { username, bio, profilePic} = req.body;
+
+    
+    // Update the user's profile in the database
+    await User.findByIdAndUpdate(userId, { username, bio, profilePic });
+
+    // Redirect the user to their profile page after updating
+    res.redirect(`/user/${userId}`);
 });
 
 const server = app.listen(3000, function() {

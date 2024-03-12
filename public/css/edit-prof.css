@@ -74,7 +74,7 @@
     margin: 0;
 }
 
-.username-container h1[contenteditable="true"] {
+.username-container input[type="text"] {
     color: #00703C; /* Text color */
     font-size: 24px; /* Font size */
     outline: none; /* Remove default outline */
@@ -113,7 +113,7 @@
     align-items: center;
 }
 
-.bio-section p[contenteditable="true"] {
+.bio-section textarea {
     flex: 1;
     color: #00703C;
     margin: 0;
