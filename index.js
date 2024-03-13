@@ -31,6 +31,16 @@ hbs.registerHelper('toString', function(objectId) {
 //     res.send('<h1>Error 404: Resource not found</h1>');
 // })
 
+//Setting up routers
+const userRouter = require('./routes/users');
+app.use('/users', userRouter);
+
+const postRouter = require('./routes/posts');
+app.use('/posts', postRouter);
+
+const commentRouter = require('./routes/comments');
+app.use('/comments', commentRouter);
+
 app.get('/', function(req, res) {
     res.sendFile(__dirname + '\\' + 'index-login.html');
 })
@@ -72,6 +82,7 @@ app.get('/settings', async function(req, res) {
     const user = await User.findOne({});
     res.render('settings', { user });
 });
+
 
 const server = app.listen(3000, function() {
     console.log("Running at Node 3000");
