@@ -3,11 +3,13 @@
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/post.css">
     <link rel="stylesheet" href="/css/comment.css">
+    <link rel="stylesheet" href="/css/delete_post_dialogue.css">
     <script src="/js/jquery-3.6.0.min.js"></script>
     <title>Freedom Wall</title>
 </head>
 <body>
     {{> header}}
+    {{> delete_post_dialogue}}
     <div class="content">
         <div class="post" id="{{post._id}}">
             <div class="top">
@@ -47,22 +49,22 @@
                     </a>
                     <span class="num" id="down-num">{{post.downVote}}</span>
                 </div>
-                {{#if (isEqual currentUser._id post.user.userId)}}
+                {{#if (eq post.user.userId)}}
                     <div class="i-right">
-                        <div class="edit">
-                            <a href="#" id="edit-icon">
+                        <div class="edit-post">
+                            <div id="edit-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="27" viewBox="0 -960 960 960" width="27">
                                     <path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" fill="#00703E"/>
                                 </svg>                        
-                            </a>
+                            </div>
                             <p>Edit</p>
                         </div>
-                        <div class="delete">
-                            <a href="#" id="delete-icon">
+                        <div class="delete-post">
+                            <div id="delete-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="27" viewBox="0 -960 960 960" width="27">
                                     <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" fill="#00703E"/>
                                 </svg>                        
-                            </a>
+                            </div>
                             <p>Delete</p>
                         </div>
                     </div>
@@ -80,25 +82,24 @@
                 </button>
             </div>
             <span id="line"></span>
-
             {{#each comment}}
-                <div class="comment-post" id="{{this.id}}">
+                <div class="comment-post">
                     <div class="user-info">
                         <a href="/user/{{this.user.userId}}"><img id="profile-pic" src='/images/pfp.jpg' alt="profile-pic"></a>
                         <p id="username">{{this.user.username}}</p>
                     </div>
-                    <p id="comment">{{this.content}}</p>
+                    <p contenteditable="false" id="comment">{{this.content}}</p>
+                    {{#if (eq this.user.userId)}}
                     <div class="action-icons">
-                        {{#if (isEqual currentUser._id this.user.userId)}}
-                            <div class="edit">
-                                <a href="#" id="edit-icon">
+                            <div class="edit-comm">
+                                <div id="edit-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" height="27" viewBox="0 -960 960 960" width="27">
                                         <path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" fill="#00703E"/>
                                     </svg>                        
-                                </a>
+                                </div>
                                 <p>Edit</p>
                             </div>
-                            <div class="delete">
+                            <div class="delete-comm">
                                 <a href="#" id="delete-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" height="27" viewBox="0 -960 960 960" width="27">
                                         <path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" fill="#00703E"/>
@@ -106,8 +107,8 @@
                                 </a>
                                 <p>Delete</p>
                             </div>
-                        {{/if}}
                     </div>
+                    {{/if}}
                 </div>
             {{/each}}        
            

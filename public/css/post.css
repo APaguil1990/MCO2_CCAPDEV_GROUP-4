@@ -2,6 +2,14 @@
     font-family: 'Avenir Next', sans-serif;
 }
 
+.content {
+    z-index: 0;
+}
+
+.blurred {
+    filter: blur(3px);
+}
+
 .post {
     font-family: Arial, Helvetica, sans-serif;;
     background-color: white;
@@ -133,10 +141,14 @@
     left: 960px;
 }
 
-.post .action-icons .edit {
+.post .action-icons .edit-post, .edit-comm, .delete-post, .delete-comm {
     color: #00703C;
     position: relative;
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.action-icons:hover {
+    cursor: pointer;
 }

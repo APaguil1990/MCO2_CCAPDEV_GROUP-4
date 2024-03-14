@@ -213,6 +213,26 @@ $("#c-pass").click(function() {
   change(pass, this, img);
 }); 
 
+$('.delete-post').on('click', function() {
+
+  var body = $(this).closest('.content');
+  var buttons = $('.content button');
+
+  buttons.prop("disabled", true);
+  body.addClass('blurred');
+  $('.delete-post-dialogue').css('display', 'flex');
+});
+
+$('#cancel-button').on('click', function() {
+
+  var body = $(this).closest('.content');
+  var buttons = $('.content button');
+
+  buttons.prop("disabled", false);
+  body.addClass('blurred');
+
+  $('.delete-post-dialogue').css('display', 'none');
+})
 
 $('.tags').on('click', '.tag-cont', function(){
 

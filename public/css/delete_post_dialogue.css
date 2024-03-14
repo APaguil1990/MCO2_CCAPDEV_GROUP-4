@@ -7,10 +7,15 @@
     border-color: #00703E;
     border-style: solid;
     border-radius: 36px;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 99;
+    position: fixed;
+    top: 35%;
+    left: 35%;
+  
 }
 
 .delete-post-dialogue #main-instruction {

@@ -30,8 +30,8 @@ hbs.registerHelper('formatDate', function(date) {
     return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 });
 
-hbs.registerHelper('isEqual', function (v1, v2) {
-    return v1 === v2;
+hbs.registerHelper('eq', function (user) {
+    return currentUser._id === user;
   });
 // app.use((req, res) => {
 //     res.status(404);
