@@ -15,18 +15,20 @@
                     <div id="bar"></div>
                     <span>Create Post</span>
                 </div>
-                <form method="post">
+                <form action="/posts" method="POST">
                     <div class="title-bar">
-                        <input type="text" id="title_input" placeholder="Title">
+                        <input type="text" id="title_input" placeholder="Title" name="title">
                     </div>
                     <div class="text-box">
-                        <textarea id="text_input" placeholder="Text" row="auto" cols="auto"></textarea>
+                        <textarea id="text_input" placeholder="Text" row="auto" cols="auto" name="content"></textarea>
                     </div>
                     <div class="tags">
+                        <input type="hidden" id="tag-value" name="tag" hidden>
                         <div class="tag-cont" name="Community">
-                            <div class="tag">
-                                <span>Community</span>
-                            </div>
+                                <div class="tag">
+                                    <span>Community</span>
+                                </div>
+                            </input>
                         </div>
                         <div class="tag-cont" name="Education">
                             <div class="tag">

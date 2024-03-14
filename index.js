@@ -49,7 +49,7 @@ app.get('/signup', (req, res) => {
     res.sendFile(__dirname + '\\' + 'signup.html');
 });
 
-app.get('/forum', async function(req,res) {
+app.get('/forum', async function(req, res) {
     const post = await Post.find({});
     const user = await User.findOne({});
     res.render('forum', { post, user });
@@ -87,4 +87,3 @@ app.get('/settings', async function(req, res) {
 const server = app.listen(3000, function() {
     console.log("Running at Node 3000");
 });
-

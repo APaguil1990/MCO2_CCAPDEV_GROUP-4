@@ -20,9 +20,14 @@ router.get('/', function (req, res) {
     }
 });
 
-//Create a comment.
+//Create a post.
 //Find the correct route.
 router.post('/', function (req, res) {
+    console.log(req.body.title);
+    console.log(req.body.content);
+    console.log(req.body.tag);
+
+    /*
     const newPost = {
         user: {
             username: req.body.username
@@ -34,14 +39,15 @@ router.post('/', function (req, res) {
         upVote: 0,
         downVote: 0
     }
-
+    
     if (!newPost.user.username || !newPost.title || !newPost.content || !newPost.tag) {
         //Error message.
         req.statusCode(400);
     } else {
         //Create post and store it to the database.
-    
+        
     }
+    */
 });
 
 //Update / edit a post
@@ -67,3 +73,5 @@ router.delete('', function (req, res) {
         res.status(400);
     }
 });
+
+module.exports = router;

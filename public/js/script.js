@@ -239,12 +239,16 @@ $("#c-pass").click(function() {
   change(pass, this, img);
 }); 
 
-
-$('.tags').on('click', '.tag-cont', function(){
+//tags
+$('.tags').on('click', '.tag-cont', function() {
 
   var tag = $(this).closest('.tag-cont');
    
   $('.tags .tag-cont').css('background-color', 'white');
 
   tag.css('background-color', '#00703C');
+
+  const tag_value = tag.text().trim();
+  console.log(tag_value)
+  $('input#tag-value').val(tag_value); 
 });
