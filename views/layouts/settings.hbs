@@ -17,30 +17,34 @@
                         <div id="bar"></div>
                         <span>Settings</span>
                     </div>
-                    <div class="input">
-                        <div class="left-i">
-                            <span class="label">Old Password</span>
-                            <input type="password" class="box" id="old-password" value="" required/>
-                            <label class="pass-img" id="cust-opass" for="o-pass"></label>
-                            <input type="checkbox" class="pass-vis" id="o-pass"/>
+                    <form id="settings-form" action="/settings/submit" method="post">
+                        <div class="input">
+                            <div class="left-i">
+                                <span class="label">Old Password</span>
+                                <input type="password" class="box" id="old-password" value="" required/>
+                                <label class="pass-img" id="cust-opass" for="o-pass"></label>
+                                <input type="checkbox" class="pass-vis" id="o-pass"/>
 
-                            <span class="label">New Password</span>
-                            <input type="password" class="box" id="new-password" value="" required/>
-                            <label class="pass-img" id="cust-npass" for="n-pass"></label>
-                            <input type="checkbox" class="pass-vis" id="n-pass"/>
+                                <span class="label">New Password</span>
+                                <input type="password" class="box" id="new-password" value="" required/>
+                                <label class="pass-img" id="cust-npass" for="n-pass"></label>
+                                <input type="checkbox" class="pass-vis" id="n-pass"/>
+                            </div>
+                            <div class="right-i">
+                                <span class="label">Confirm Password</span>
+                                <input type="password" class="box" id="new-conf-password" value="" required/>
+                                <label class="pass-img" id="cust-cpass" for="c-pass"></label>
+                                <input type="checkbox" class="pass-vis" id="c-pass"/>
+                            </div>
                         </div>
-                        <div class="right-i">
-                            <span class="label">Confirm Password</span>
-                            <input type="password" class="box" id="new-conf-password" value="" required/>
-                            <label class="pass-img" id="cust-cpass" for="c-pass"></label>
-                            <input type="checkbox" class="pass-vis" id="c-pass"/>
-                        </div>
-                    </div>
+                    </form>
                     <div class="buttons">
-                        <button id="cancel-btn">
-                            Cancel
-                        </button>
-                        <button type="button" id="change-btn">
+                        <a href="/forum">
+                            <button id="cancel-btn">
+                                Cancel
+                            </button>
+                        </a>
+                        <button type="submit" id="change-btn" form="settings-form">
                             Confirm
                         </button>
                     </div>

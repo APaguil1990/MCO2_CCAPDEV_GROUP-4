@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/edit-prof.css" />
+    <script src="/js/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    {{> header}}
+    <form class="profile-section" action="/user/{{currentUser.id}}" method="post">
+        <div class="top-p">
+            <div class="profile-pic">
+                <input type="file" id="profilePicInput" accept="image/*" style="display: none"/>
+                <label for="profilePicInput">
+                    <img id="profilePic" src="/images/pfp.jpg" alt="profile-pic" />
+                </label>
+                <img src="/images/pen-icon.svg" class="pen" id="pen-pfp" alt="pen-pfp" />
+            </div>
+            <div class="username-container">
+                <h1 contenteditable="true">{{currentUser.username}}</h1>
+                <img src="/images/pen-icon.svg" class="pen" id="green-pen1" alt="green-pen" />
+            </div>
+        </div>
+      <div class="bio-section">
+        <p contenteditable="true">
+          {{{currentUser.bio}}}
+        </p>
+        <img src="/images/pen-icon.svg" class="pen" id="green-pen2" alt="green-pen" />
+      </div>
+      <div class="buttons">
+        <a href="/user/{{currentUser.id}}">
+          <button id="cancel-button" >
+              Cancel
+          </button>
+        </a>
+        <button type="submit" id="confirm-button" >
+            Confirm
+        </button>
+      </div>
+    </form>
+    <script src="/js/profile-pic.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

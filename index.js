@@ -29,6 +29,10 @@ hbs.registerHelper('toString', function(objectId) {
 hbs.registerHelper('formatDate', function(date) {
     return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 });
+
+hbs.registerHelper('isEqual', function (v1, v2) {
+    return v1 === v2;
+  });
 // app.use((req, res) => {
 //     res.status(404);
 //     res.send('<h1>Error 404: Resource not found</h1>');
@@ -65,6 +69,12 @@ app.post('/forum', async function(req, res) {
         }
 }); 
 
+app.post('/settings/submit', async function(req, res) {
+
+    res.redirect('/forum');
+
+});
+
 app.get('/post/:id', async function(req, res) {
     const id = req.params.id;
     const post = await Post.findById(id);
@@ -80,10 +90,25 @@ app.get('/user/:id',async function(req, res) {
     res.render('profile', { user, post, currentUser });
 });
 
+app.post('/user/:id', async function(req, res) {
+    
+    res.redirect(`/user/${currentUser.id}`);
+});
+
+app.get('/edit_profile', async function(req, res) {
+
+    res.render('edit_profile', { currentUser });
+});
+
 app.get('/create-post', async function(req, res) {
 
     res.render('create_post', { currentUser });
 });
+
+app.post('/create-post',  async function(req, res) {
+
+    res.redirect('/forum', { currentUser });
+})
 
 app.get('/settings', async function(req, res) {
 

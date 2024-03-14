@@ -192,22 +192,6 @@ $(document).ready(function() {
   });
 });
 
-$("#cancel-button").click(function() {
-  window.location.href = "profile.html";
-});
-
-$("#confirm-button").click(function() {
-  window.location.href = "profile.html";
-});
-
-$("#cancel-btn").click(function() {
-  window.location.href = "forum.html";
-});
-
-$("#change-btn").click(function() {
-  window.location.href = "forum.html";
-});
-
 $("#o-pass").click(function() {
   var pass = $("#old-password");
   var img = $("#cust-opass");

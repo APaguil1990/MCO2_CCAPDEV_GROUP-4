@@ -125,8 +125,8 @@ a:active {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
-    lefT: 30px;
+    gap: 20px;
+    left: 30px;
 }
 
 .forum-pfp {
@@ -139,6 +139,7 @@ a:active {
 
 .top span {
     font-weight: bold;
+    padding-right: 20px;
 }
 
 .forum h1 {
@@ -151,7 +152,6 @@ a:active {
     position: relative;
     justify-self: center;
     align-self: center;
-    left: 50px;
     font-size: small;
     color: white;
     font-weight: none;

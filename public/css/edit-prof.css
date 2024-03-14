@@ -1,15 +1,23 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .profile-section {
+    position: relative;
     font-family: Arial, Helvetica, sans-serif;
+    justify-self: center;
     background-color: white;
     padding: 20px;
     border-radius: 30px;
     background-color: #00703C;
-    margin: 50px auto;
     display: flexbox;
     width: 60%;
+    top: 200px;
+    box-shadow: 0 0 20px gray;
 }
-
-
 
 .profile-pic {
     margin-right: 20px;
