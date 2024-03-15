@@ -65,6 +65,12 @@ app.post('/forum', async function(req, res) {
         }
 }); 
 
+app.get('/forum/search', async function(req, res) {
+    console.log(req.query.query);
+
+    res.redirect('/forum');
+});
+
 app.post('/settings/submit', async function(req, res) {
 
     res.redirect('/forum');
