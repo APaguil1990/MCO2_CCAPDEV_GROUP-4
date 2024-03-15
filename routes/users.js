@@ -11,14 +11,38 @@ router.get('/', function (req, res) {
 //Get a user.
 //Find the correct route.
 router.get('/', function (req, res) {
+    console.log(req.query.username);
+    console.log(req.query.password);
+    
+    /*
     const found = true; //Find a user.
-
+    
     if (found) {
         res.json(); //return the user.
     } else {
         //Error message.
         res.status(400);
     }
+    */
+});
+
+//Get a user for login.
+router.post('/login', function (req, res) {
+    console.log(req.body.email);
+    console.log(req.body.password);
+
+    /*
+    const found = true; //Find a user.
+    
+    if (found) {
+        res.json(); //return the user.
+    } else {
+        //Error message.
+        res.status(400);
+    }
+    
+    res.redirect('../forum');
+    */
 });
 
 //Create a user.
@@ -28,7 +52,7 @@ router.post('/', function (req, res) {
     console.log(req.body.password);
     console.log(req.body.username);
 
-    res.sendFile(path.join(__dirname, '../', 'index-login.html'));
+    res.redirect('../');
 
     /*
     const newUser = {
