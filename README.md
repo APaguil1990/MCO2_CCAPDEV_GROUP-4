@@ -1,2 +1,6 @@
-# MCO1_CCAPDEV
-CCAPDEV MCO1
+# MCO2_CCAPDEV
+CCAPDEV MCO2
+
+Packages:
+
+npm install mongoose express body-parser hbs
