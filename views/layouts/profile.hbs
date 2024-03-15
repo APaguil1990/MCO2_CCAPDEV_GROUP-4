@@ -25,6 +25,7 @@
                     <span class="dates">Birthday: {{formatDate user.birthday}}</span> 
                     <span class="dates">Joined: {{formatDate user.dateCreated}}</span>
                 </div>
+                {{#if (eq user._id)}}
                 <div class="set-pfp">
                     <a href="/edit_profile">
                         <svg class="icons" id="gear-icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" width="30" height="30" color="#00703C">
@@ -36,6 +37,7 @@
                         </svg>
                     </a>
                 </div>
+                {{/if}}
             </div>
         </div>
         <div class="pfp-bot">
