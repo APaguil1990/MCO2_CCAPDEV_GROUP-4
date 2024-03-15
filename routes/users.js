@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
 
 //Get users
 router.get('/', function (req, res) {
@@ -23,6 +24,13 @@ router.get('/', function (req, res) {
 //Create a user.
 //Find the correct route.
 router.post('/', function (req, res) {
+    console.log(req.body.email);
+    console.log(req.body.password);
+    console.log(req.body.username);
+
+    res.sendFile(path.join(__dirname, '../', 'index-login.html'));
+
+    /*
     const newUser = {
         username: req.body.username,
         handle: {
@@ -43,6 +51,7 @@ router.post('/', function (req, res) {
         //Create user and store it to the database.
     
     }
+    */
 });
 
 //Update / edit a user

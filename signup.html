@@ -18,13 +18,13 @@
           <div id="bar"></div>
           <h2 id="h-signup">Sign Up</h2>
 
-          <form class="inputs" id="signup_form" action="/signup" method="post">
+          <form class="inputs" id="signup_form" action="/users" method="POST">
             <div class="left-input">
               <span class="label">Email</span>
-              <input type="email" class="box" id="email" value="" required/>
+              <input type="email" class="box" id="email" name="email" value="" required/>
 
               <span class="label">Password</span>
-              <input type="password" class="box" id="password" value="" required/>
+              <input type="password" class="box" id="password" name="password" value="" required/>
               <label class="pass-img" id="cust-bpass" for="b-pass"></label>
               <input type="checkbox" class="pass-vis" id="b-pass"/>
               
@@ -35,9 +35,9 @@
             </div>
             <div class="right-input">
               <span class="label">Username</span>
-              <input type="text" class="box" id="username" value="" required/>
+              <input type="text" class="box" id="username" name="username" value="" required/>
               <span class="label">Birthday</span>
-              <input type="date" class="box" id="birthday" value=""required />
+              <input type="date" class="box" id="birthday" name="birthday" value=""required />
               <button type="submit" id="signup-btn">
                 Create Account
               </button>

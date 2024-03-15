@@ -40,6 +40,7 @@ $("#b-confpass").click(function() {
   change(pass, this, img);
 });
 
+/*
 $("#signup_form").submit(function(event) {
 
   event.preventDefault();
@@ -48,6 +49,7 @@ $("#signup_form").submit(function(event) {
 
   window.location.href = "index-login.html";
 });
+*/
 
 function thumbClick(icon, num, type) {
   var color = icon.css('fill');
