@@ -33,10 +33,6 @@ hbs.registerHelper('formatDate', function(date) {
 hbs.registerHelper('eq', function (user) {
     return currentUser._id === user;
   });
-// app.use((req, res) => {
-//     res.status(404);
-//     res.send('<h1>Error 404: Resource not found</h1>');
-// })
 
 var currentUser;
 
@@ -107,7 +103,7 @@ app.get('/create-post', async function(req, res) {
 
 app.post('/create-post',  async function(req, res) {
 
-    res.redirect('/forum', { currentUser });
+    res.redirect('/forum');
 })
 
 app.get('/settings', async function(req, res) {

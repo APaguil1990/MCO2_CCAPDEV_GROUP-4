@@ -50,20 +50,20 @@
         <h1>Posts</h1>
         </div>
         {{#each post}}
-            <a href="/post/{{this.id}}"></a>
-                <div class="post">
-                    <div class="top">
-                        <div class="user-info">
-                            <a href="#"><img src="/images/pfp.jpg" id="postpfp"></a>
-                            <p id="username">{{user.username}}</p>
-                        </div>
-                        <div class="tag">
-                            <span>{{this.tag}}</span>
-                        </div>                
+            <div class="post">
+                <div class="top">
+                    <div class="user-info">
+                        <a href="#"><img src="/images/pfp.jpg" id="postpfp"></a>
+                        <p id="username">{{user.username}}</p>
                     </div>
-                    <h3 id="title">{{this.title}}</h3>
+                    <div class="tag">
+                        <span>{{this.tag}}</span>
+                    </div>                
                 </div>
-            </a>
+                <a href="/post/{{this.id}}">
+                    <h3 id="title">{{this.title}}</h3>
+                </a>
+            </div>
         {{/each}}
     </div>
     <script src="/js/script.js"></script>

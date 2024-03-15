@@ -232,7 +232,19 @@ $('#cancel-button').on('click', function() {
   body.addClass('blurred');
 
   $('.delete-post-dialogue').css('display', 'none');
+  $('.delete-comment-dialogue').css('display', 'none');
 })
+
+$('.delete-comm').on('click', function() {
+
+  var body = $(this).closest('.content');
+  var buttons = $('.content button');
+
+  buttons.prop("disabled", true);
+  body.addClass('blurred');
+  $('.delete-comment-dialogue').css('display', 'flex');
+});
+
 
 $('.tags').on('click', '.tag-cont', function(){
 
