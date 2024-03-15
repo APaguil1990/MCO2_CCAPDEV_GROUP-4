@@ -37,6 +37,12 @@ async function refresh() {
           email: 'maythefaucetbewithyou@gmail.com', password: 'Youar3n0tmywateR',  birthday: new Date(1951, 8, 25), dateCreated:new Date(2024, 0, 29)}, 
         { _id: 1008,  username: 'Hyou Ka', bio: 'Everything... makes me curious', 
           email: 'iscream_01@gmail.com', password: 'kininarimasu11',  birthday: new Date(2000, 3, 22), dateCreated: new Date(2024, 0, 19)},
+        { _id: 1009, username: 'Mr. Best', bio: 'Please buy Eatables Chocolate', 
+          email: 'mistah_best9000@gmail.com', password:'letsBeatUSeries2', birthday: new Date(1998, 4, 7), dateCreated: new Date(2024, 2, 1)},
+        { _id: 1010, username: 'Mark Zarksburger', bio: 'Founder and CEO of Foodbook', 
+          email: 'markzarks_19@gmail.com', password:'BetaversE22', birthday: new Date(1984, 4, 14), dateCreated: new Date(2024, 1, 10)},
+        { _id: 1011, username: 'Carlos Magsen', bio: 'Magsen 1 - Starkfish 0, Bongcloud Connoisseur', 
+          email: 'bongclaudius_kingsen9@gmail.com', password:'e4Ke2Ke1Ke2Ke1', birthday: new Date(1990, 10, 30), dateCreated: new Date(2024, 2, 18)}
     ]);
       console.log("Data inserted successfully.");
   } catch (error) {
