@@ -40,11 +40,11 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + '\\' + 'index-login.html');
 })
 
-app.get('/signup', (req, res) => {
-    res.redirect('/');
+app.get('/signup', function(req, res) {
+    res.sendFile(__dirname + '\\' + 'signup.html');
 });
 
-app.post('/signup', (req, res) => {
+app.post('/signup', function(req, res) {
     res.redirect('/');
 });
 

@@ -30,15 +30,6 @@ $("#b-confpass").click(function() {
   change(pass, this, img);
 });
 
-$("#signup_form").submit(function(event) {
-
-  event.preventDefault();
-
-  //some logic here for information checking 
-
-  window.location.href = "index-login.html";
-});
-
 function thumbClick(icon, num, type) {
   var color = icon.css('fill');
 
@@ -133,18 +124,6 @@ $("#post_btn").on('submit', function() {
   
    alert("Successfully posted.")
 });
-
-// $("#f1 .title").click(function() {
-//   window.location.href = "post1.html";
-// })
-
-// $("#f2 .title").click(function() {
-//   window.location.href = "post2.html";
-// });
-
-// $("#f3 .title").click(function() {
-//   window.location.href = "post3.html";
-// });
 
 $(document).ready(function() {
 
